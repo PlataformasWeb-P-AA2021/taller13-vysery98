@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Editar Edificio | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h4>Editar Edificio</h4>
+
+<form action="" method="post">
+  {% csrf_token %}
+  {{formulario.as_p}}
+  <p><button type="submit" class="btn btn-primary">Actualizar</button></p>
+</form>
+
+{% endblock %}

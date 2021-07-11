@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Información del Edificio | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<h4>Información del Edificio <b>"{{edificios.nombre}}"<b></h4>
+<hr>
+<p>Ciudad: <b>{{edificios.ciudad}}</b></p>
+<p>Dirección: <b>{{edificios.direccion}}</b></p>
+<p>Tipo de Edificio: <b>{{edificios.tipo_edificio}}</b></p>
+{% endblock %}

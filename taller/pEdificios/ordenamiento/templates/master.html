@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    {% load static %}
+    <link rel="icon" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>
+      {% block title %}
+      E.D.
+      {% endblock %}
+    </title>
+  </head>
+
+  <body>
+    <header>
+      <img src="{% static 'images/logo.png' %}" alt="My image" class="center">
+      <div id="headerDiv">
+        <h2>Edificios & Departamentos</h2>
+      </div>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index' %}">Inicio</a>
+        <a class="navbar-brand" href="{% url 'crear_edificio' %}">Agregar Edificio</a>
+        <a class="navbar-brand" href="{% url 'crear_departamento' %}">Agregar Departamento</a>
+      </nav>
+    </header>
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+    <hr>
+    {% include 'footer.html' %}
+  </body>
+</html>
